@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Employe Panel</title>
+    <link rel="stylesheet" href="stylesheetforpanles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="head" title="GroceryStore">
+                <i class="fa fa-renren"></i> Grocery<span class="halfHead">Store<sup style="font-size:40%; color: white;">&reg</sup>
+                </span>
+            </h1>
+            <button class="logInBtnNavBar" title="Navigation Bar" onclick="showSide();" class="textAcc">
+                <i class="fa fa-bars" aria-hidden="true" ></i> NAVIGATION
+            </button>
+            <button class="FAacc"><i class="fa fa-bars" onclick="showSide();" aria-hidden="true" ></i></button>
+            </div>
+            <div id="loginArea" class="area">
+                    <a href="javascript:void(0)" title="Close" class="closebtn" onclick="closeSide()">&times;</a>
+                   
+                    
+                    
+                   <p id="container"></p>
+                    <button onclick="logout();" class="logoutBtn"><i class="fa fa-sign-out"></i> LOG OUT</button>
+                </div>
+                <div class="modelBox" id="mode">
+                    <div class="modelContent">
+                        <div class="headerOfSaleModel">
+                        <h1 id="productName" class="modeH1"></h1>
+                        </div>
+                        <div class="saleInfoForm">
+                        <form action="JavaScript:void(0)" onsubmit="sellProduct(document.getElementById('productName').innerText);">
+                            <span id="errorinSaleInfo">Please select correct quantity.</span>
+                            <p class="saleInfo">How Much?</p>
+                            <label><input type="number" class="saleInfoInput" id="quantityOfProduct" placeholder="Enter Quantity..." required="required"></label>
+                            <p class="saleInfo">Today's Date</p>
+                            <p id="date" class="saleInfoInput"></p>
+                            <p class="saleInfo">Price Per Product</p>
+                            <p class="saleInfoInput" id="priceOfProduct"></p>
+                            <i class="fa fa-angle-double-down"></i>
+                            <br />
+                            <input type="submit" value="SELL" class="submitBtnOfSale">
+                        </form>
+                        </div>
+                        <div class="footerOfMode" onclick="document.getElementById('mode').style.display = 'none';">
+                                <span><i class="fa fa-close"></i> CANCEL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                    <div style="text-align:center;" class="fContainer1">
+                    <div class="f1" id="parachute_oil">
+                        <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('f1');" onmouseout="changeag('f1','parachute oil.jpg');" id="f1">
+                        <img src="parachute oil.jpg" width="200px" height="160px;"> 
+                            <div class="b" onclick="details('parachute_oil','parachute oil.jpg')">+</div>
+                    </div>
+                        <p class="proInfoN" onclick="details('parachute_oil','parachute oil.jpg')">PARACHUTE OIL</p>
+                        <p class="proInfo">RS.200</p>
+                        <button class="adminBtnsEdit" onclick="details('parachute_oil','parachute oil.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                        <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('parachute_oil')"><i class="fa fa-shopping-cart"></i> SELL</button>
+                    </div>
+                    <div class="f2" id="pears_soap">
+                        <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('f2');" onmouseout="changeag('f2','soap.jpg');" id="f2">
+                        <img src="soap.jpg" width="200px" height="160px;">
+                        <div class="b" onclick="details('pears_soap','soap.jpg')">+</div>
+                        </div>
+                        <p class="proInfoN" onclick="details('pears_soap','soap.jpg')">PEARS SOAP</p>
+                        <p class="proInfo">RS.50</p>
+                        <button class="adminBtnsEdit" onclick="details('pears_soap','soap.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                        <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('pears_soap')"><i class="fa fa-shopping-cart"></i> SELL</button>
+                    </div>
+                    <div class="f3" id="madhur_sugar">
+                        <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('f3');" onmouseout="changeag('f3','sugar.jpg');" id="f3">
+                        <img src="sugar.jpg" width="200px" height="160px;">
+                        <div class="b" onclick="details('madhur_sugar','sugar.jpg')">+</div>
+                        </div>
+                        <p class="proInfoN" onclick="details('madhur_sugar','products/footwears/f3.jpg')">MADHUR SUGAR</p>
+                        <p class="proInfo">RS.300</p>
+                        <button class="adminBtnsEdit" onclick="details('madhur_sugar','sugar.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                        <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('madhur_sugar')"><i class="fa fa-shopping-cart"></i> SELL</button>
+                    </div>
+                    </div>
+                    <div style="text-align:center;" class="fContainer2">
+                    <div class="f4" id="wheat_flour">
+                        <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('f4');" onmouseout="changeag('f4','wheat flour.jpg');" id="f4">
+                        <img src="wheat flour.jpg" width="200px" height="160px;">
+                        <div class="b" onclick="details('wheat_flour','wheat flour.jpg')">+</div>
+                        </div>
+                        <p class="proInfoN" onclick="details('wheat_flour','wheat flour.jpg')">WHEAT FLOUR</p>
+                        <p class="proInfo">RS.400</p>
+                        <button class="adminBtnsEdit" onclick="details('wheat_flour','wheat flour.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                        <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('wheat_flour')"><i class="fa fa-shopping-cart"></i> SELL</button>
+                    </div>
+                    <div class="f5" id="surf_exel_soap">
+                            <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('f5');" onmouseout="changeag('f5','washing soap.jpg');" id="f5">
+                        <img src="washing soap.jpg" width="200px" height="160px;">
+                        <div class="b" onclick="details('surf_exel_soap','washing soap.jpg')">+</div>
+                        </div>
+                        <p class="proInfoN" onclick="details('surf_exel_soap','washing soap.jpg')">SURF EXEL SOAP</p>
+                        <p class="proInfo">RS.15</p>
+                        <button class="adminBtnsEdit" onclick="details('surf_exel_soap','washing soap.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                        <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('surf_exel_soap')"><i class="fa fa-shopping-cart"></i> SELL</button>
+                    </div>
+                    <div class="f6" id="lizol">
+                            <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('f6');" onmouseout="changeag('f6','lizol.jpg');" id="f6">
+                        <img src="lizol.jpg" width="200px" height="160px;">
+                        <div class="b" onclick="details('lizol','lizol.jpg')">+</div>
+                        </div>
+                        <p class="proInfoN" onclick="details('lizol','lizol.jpg')">LIZOL</p>
+                        <p class="proInfo">RS.500</p>
+                        <button class="adminBtnsEdit" onclick="details('lizol','lizol.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                        <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('lizol')"><i class="fa fa-shopping-cart"></i> SELL</button>
+                    </div>
+                    </div>
+                </div>
+
+                
+                        <div style="text-align:center;" class="fContainer1">
+                        <div class="f1" id="gemini_oil">
+                            <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('c1');" onmouseout="changeag('c1','gemini_oil.jpg');" id="c1">
+                            <img src="gemini_oil.jpg" width="200px" height="160px;">
+                            <div class="b" onclick="details('gemini_oil','gemini_oil.jpg')">+</div>
+                            </div>
+                            <p class="proInfoN" onclick="details('gemini_oil','gemini_oil.jpg')">GEMINI OIL</p>
+                            <p class="proInfo">RS.2100</p>
+                            <button class="adminBtnsEdit" onclick="details('gemini_oil','gemini_oil.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                            <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('gemini_oil')"><i class="fa fa-shopping-cart"></i> SELL</button>
+                        </div>
+                        <div class="f2" id="red_label_tea">
+                                <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('c2');" onmouseout="changeag('c2','tea.jfif');" id="c2">
+                            <img src="tea.jfif" width="200px" height="160px;">
+                            <div class="b" onclick="details('red_label_tea','tea.jfif')">+</div>
+                            </div>
+                            <p class="proInfoN" onclick="details('red_label_tea','tea.jfif')">RED LABEL TEA</p>
+                            <p class="proInfo">RS.150</p>
+                            <button class="adminBtnsEdit" onclick="details('red_label_tea','tea.jfif')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                            <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('red_label_tea')"><i class="fa fa-shopping-cart"></i> SELL</button>
+                        </div>
+                        <div class="f3" id="almonds">
+                                <div class="imgCover"alt="Please Wait Loading..."  onmouseover="change('c5');" onmouseout="changeag('c5','almonds.jfif');" id="c5">
+                            <img src="almonds.jfif" width="200px" height="160px;">
+                            <div class="b" onclick="details('almonds','almonds.jfif')">+</div>
+                            </div>
+                            <p class="proInfoN" onclick="details('almonds','almonds.jfif')">ALMONDS</p>
+                            <p class="proInfo">RS.650</p>
+                            <button class="adminBtnsEdit" onclick="details('almonds','almonds.jfif')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                            <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('almonds')"><i class="fa fa-shopping-cart"></i> SELL</button>
+                        </div>
+                        </div>
+                        <div style="text-align:center;" class="fContainer2">
+                        <div class="f4" id="salt">
+                                <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('c4');" onmouseout="changeag('c4','salt.jpg');" id="c4">
+                            <img src="salt.jpg" width="200px" height="160px;">
+                            <div class="b" onclick="details('salt','salt.jpg')">+</div>
+                            </div>
+                            <p class="proInfoN" onclick="details('salt','salt.jpg')">SALT</p>
+                            <p class="proInfo">RS.100</p>
+                            <button class="adminBtnsEdit" onclick="details('salt','salt.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                            <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('salt')"><i class="fa fa-shopping-cart"></i> SELL</button>
+                        </div>
+                        <div class="f5" id="onion">
+                                <div class="imgCover" alt="Please Wait Loading..."  onmouseover="change('c3');" onmouseout="changeag('c3','onion.jpg');" id="c3">
+                            <img src="onion.jpg" width="200px" height="160px;">
+                            <div class="b" onclick="details('onion','onion.jpg')">+</div>
+                            </div>
+                            <p class="proInfoN" onclick="details('onion','onion.jpg')">ONION</p>
+                            <p class="proInfo">RS.120</p>
+                            <button class="adminBtnsEdit" onclick="details('onion','onion.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                            <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('onion')"><i class="fa fa-shopping-cart"></i> SELL</button>
+                        </div>
+                        <div class="f6" id="coffee">
+                                <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('c6');" onmouseout="changeag('c6','coffee.jpg');" id="c6">
+                            <img src="coffee.jpg" width="200px" height="160px;">
+                            <div class="b" onclick="details('coffee','coffee.jpg')">+</div>
+                            </div>
+                            <p class="proInfoN" onclick="details('coffee','coffee.jpg')">COFFEE</p>
+                            <p class="proInfo">RS.400</p>
+                            <button class="adminBtnsEdit" onclick="details('coffee','coffee.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                            <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('coffee')"><i class="fa fa-shopping-cart"></i> SELL</button>
+                        </div>
+                        </div>
+                    </div>
+
+                    
+                            <div style="text-align:center;" class="fContainer1">
+                            <div class="f1" id="apple">
+                                <div class="imgCover" alt="Please Wait Loading..."  onmouseover="change('w1');" onmouseout="changeag('w1','apple.jpg');" id="w1">
+                                <img src="apple.jpg" width="200px" height="160px;">
+                                <div class="b" onclick="details('apple','apple.jpg')">+</div>
+                                </div>
+                                <p class="proInfoN" onclick="details('apple','apple.jpg')">APPLE</p>
+                                <p class="proInfo">RS.350</p>
+                                <button class="adminBtnsEdit" onclick="details('apple','apple.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                                <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('apple')"><i class="fa fa-shopping-cart"></i> SELL</button>
+                            </div>
+                            <div class="f2" id="complete_care_toothpaste">
+                                <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('w2');" onmouseout="changeag('w2','toothpaste.jpg');" id="w2">
+                                <img src="toothpaste.jpg" width="200px" height="160px;">
+                                <div class="b" onclick="details('complete_care_toothpaste','toothpaste.jpg')">+</div>
+                                </div>
+                                <p class="proInfoN" onclick="details('complete_care_toothpaste','toothpaste.jpg')">COMPLETE CARE TOOTHPASTE</p>
+                                <p class="proInfo">RS.250</p>
+                                <button class="adminBtnsEdit" onclick="details('complete_care_toothpaste','toothpaste.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                                <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('complete_care_toothpaste')"><i class="fa fa-shopping-cart"></i> SELL</button>
+                            </div>
+                            <div class="f3" id="potato">
+                                    <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('w3');" onmouseout="changeag('w3','potato.jpg');" id="w3">
+                                <img src="potato.jpg" width="200px" height="160px;">
+                                <div class="b" onclick="details('potato','potato.jpg')">+</div>
+                                </div>
+                                <p class="proInfoN" onclick="details('potato','potato.jpg')">POTATOE</p>
+                                <p class="proInfo">RS.125</p>
+                                <button class="adminBtnsEdit" onclick="details('potato','potato.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                                <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('potato')"><i class="fa fa-shopping-cart"></i> SELL</button>
+                            </div>
+                            </div>
+                            <div style="text-align:center;" class="fContainer2">
+                            <div class="f4" id="peanuts">
+                                    <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('w4');" onmouseout="changeag('w4','peanuts.jpg');" id="w4">
+                                <img src="peanuts.jpg" width="200px" height="160px;">
+                                <div class="b" onclick="details('peanuts','peanuts.jpg')">+</div>
+                                </div>
+                                <p class="proInfoN" onclick="details('peanuts','peanuts.jpg')">PEANUTS</p>
+                                <p class="proInfo">RS.350</p>
+                                <button class="adminBtnsEdit" onclick="details('peanuts','peanuts.jpg')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                                <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('peanuts')"><i class="fa fa-shopping-cart"></i> SELL</button>
+                            </div>
+                            <div class="f5" id="ariel_washing_powder">
+                                    <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('w5');" onmouseout="changeag('w5','washing powser.jfif');" id="w5">
+                                <img src="washing powser.jfif" width="200px" height="160px;">
+                                <div class="b" onclick="details('ariel_washing_powder','washing powser.jfif')">+</div>
+                                </div>
+                                <p class="proInfoN" onclick="details('ariel_washing_powder','washing powser.jfif')">ARIEL WASHING POWDER</p>
+                                <p class="proInfo">RS.300</p>
+                                <button class="adminBtnsEdit" onclick="details('ariel_washing_powder','washing powser.jfif')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                                <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('ariel_washing_powder')"><i class="fa fa-shopping-cart"></i> SELL</button>
+                            </div>
+                            <div class="f6" id="basmati_rice">
+                                    <div class="imgCover" alt="Please Wait Loading..." onmouseover="change('w6');" onmouseout="changeag('w6','basmati rice.png');" id="w6">
+                                <img src="basmati rice.png" width="200px" height="160px;">
+                                <div class="b" onclick="details('basmati_rice','basmati rice.png')">+</div>
+                                </div>
+                                <p class="proInfoN" onclick="details('basmati_rice','basmati rice.png')">BASMATI RICE</p>
+                                <p class="proInfo">RS.730</p>
+                                <button class="adminBtnsEdit" onclick="details('basmati_rice','basmati rice.png')" title="More" ><i class="fa fa-arrow-up"></i> MORE</button>
+                                <button class="sellBtn" title="Sell Product" onclick="sellProductInfoGet('basmati_rice')"><i class="fa fa-shopping-cart"></i> SELL</button>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+            </div>
+            <p id="topButton" style="text-align:center;"><a href="#top"><button class="topBtn" title="Top"><i class="fa fa-arrow-up"></i></button></a></p>
+            <div class="footer">
+                <p class="footerr">@COPYRIGHTS-2021-22. All Rights Reserved.</p><a href="#top">
+            </div>
+            </div>
+    <script src="app.js"></script>
+    <script src="sweetalert2.js"></script>
+</body>
+</html>
